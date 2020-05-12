@@ -49,7 +49,6 @@ def label_kwd(sentence):
 
             if kw not in kwds_sgrank_str:
                 kw_uni.append(kw)
-
         kwds = kwds_sgrank + kwds_txtrnk
         l_kwds = [kwd for kwd in kwds]
         # remove numbers from keywords
