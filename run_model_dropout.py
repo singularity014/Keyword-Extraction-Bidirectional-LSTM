@@ -39,6 +39,7 @@ def tag_keywords(all_keywords):
 	all_keywords = list(set(all_keywords))
 	return all_keywords
 
+# sentence cleaning
 df['Sentence'] = df['Sentence'].apply(lambda x: x.replace(" – TechCrunch",""))
 df['Keyword'] = df['Keyword'].apply(lambda x: tag_keywords(x))
 
@@ -89,7 +90,7 @@ for word, i in word_index.items():
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 42)
-
+# Model creation
 model = Sequential()
 model.add(Embedding(len(word_index) + 1, 100, weights = [embedding_matrix]))
 model.add(Bidirectional(LSTM(128, return_sequences = True, recurrent_dropout = 0.3)))
@@ -100,7 +101,7 @@ model.add(TimeDistributed(Dense(2, activation = "softmax")))
 model.compile(loss="categorical_crossentropy", optimizer = "adam", metrics = ["accuracy"])
 model.fit(X_train, np.array(y_train), batch_size = 32, epochs = 5, validation_split = 0.1)
 
-
+# model save
 model_json = model.to_json()
 with open("model.json", "w") as json_file:
     json_file.write(model_json)
