@@ -26,6 +26,7 @@ model.load_weights("model.h5")
 tokenizer = pickle.load(open("tokenizer.pickle","rb"))
 final_results = []
 
+
 ##------------------------------------------------------------------------------------------------------##
 with open('test-sentences.txt') as fil:
 	lines = fil.readlines()
