@@ -88,7 +88,7 @@ sentences = data_cleaner(sentences)
 # get data with labelled keyword
 # labelled_data = label_kwd(sentences)
 
-
+# multiprocessing
 with Pool(processes=4) as pool:
     final_data = pool.map(label_kwd, sentences, chunksize=20)
     if not final_data:
