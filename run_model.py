@@ -30,6 +30,7 @@ df = pd.read_csv("wikidata.csv", delimiter = "	", names = ["Sentence", "Keyword"
 df['Sentence'] = df['Sentence'].astype(str)
 df['Keyword'] = df['Keyword'].astype(str)
 
+
 def hasNumbers(inputString):
 	return any(char.isdigit() for char in inputString)
 
