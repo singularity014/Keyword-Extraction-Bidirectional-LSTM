@@ -64,6 +64,7 @@ for index, row in df.iterrows():
 		keyword_column.append(new_keywords)
 
 
+		
 tokenizer = Tokenizer(oov_token = "<UNK>")
 tokenizer.fit_on_texts(sentence_column)
 X = tokenizer.texts_to_sequences(sentence_column)
