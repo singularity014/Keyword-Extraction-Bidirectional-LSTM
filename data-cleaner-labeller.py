@@ -71,7 +71,8 @@ def label_kwd(sentence):
 # Data loaded
 df = pd.read_csv('Data.csv', delimiter='\t', names=['Sentence', 'Keywords'])
 
-# drop nltk - rake keywords
+# drop nltk - rake keywords as later I thought to use 
+# other method(SGRank) for obtaining label keyword
 df = df.drop(['Keywords'], axis=1)
 
 # get the sentences
