@@ -69,7 +69,7 @@ def label_kwd(sentence):
 # ------------------------------------- Steps for cleaning -----------------------#
 
 # Data loaded
-df = pd.read_csv('Data.csv', delimiter='\t', names=['Sentence', 'Keywords'])
+df = pd.read_csv('wiki-collector-data.csv', delimiter='\t', names=['Sentence', 'Keywords'])
 
 # drop nltk - rake keywords as later I thought to use 
 # other method(SGRank) for obtaining label keyword
